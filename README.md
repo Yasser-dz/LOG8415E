@@ -18,7 +18,7 @@ Ensure that you include the (172.31.16.0/20) subnet in the "Main.py" file on lin
 After setting up the standalone instance, copy the file standalone.sh to the standalone instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	scp -i "labsuser.pem" standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu
-# On the standalone instance
+### On the standalone instance
 After connecting to the instance, run the script with:
 -	chmod +x standalone.sh
 -	./standalone.sh
@@ -27,7 +27,7 @@ Finally, find the result in the standaloneResult file.
 After setting up the salves instances, copy the file slave.sh to each slave instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	scp -i "labsuser.pem" /LOG8415E/slave.sh ubuntu@Public_address_ip_of_slave_instance:/home/ubuntu
-# On the Slave instance
+### On the Slave instance
 After connecting to the instance, run the script with:
 -	chmod +x slave.sh
 -	./slave.sh
@@ -35,7 +35,7 @@ After setting up the master instance, copy the files cluster.sh and master.sh to
 To copy: 
 -	scp -i "labsuser.pem" /LOG8415E/master.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
 -	scp -i "labsuser.pem" /LOG8415E/cluster.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
-# On the Master instance
+### On the Master instance
 After connecting to the instance, run the script with:
 -	chmod +x master.sh
 -	./master.sh
@@ -48,10 +48,10 @@ To copy:
 -	scp -i "labsuser.pem" /LOG8415E/proxy_Direct.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
 -	scp -i "labsuser.pem" /LOG8415E/proxy_Random.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
 -	scp -i "labsuser.pem" /LOG8415E/proxy_customized.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
-# On the Master instance
+### On the Master instance
 1-	CREATE USER 'usrname'@'proxy_public_ip' IDENTIFIED BY 'password';
 2-	GRANT ALL PRIVILEGES ON * . * TO 'usrname'@'proxy_public_ip';
-# On the Proxy instance
+### On the Proxy instance
 Then, run the proxy:
 -	python3 proxy_Direct.py "Show tables" 
 -	python3 proxy_Random.py "Show tables"
