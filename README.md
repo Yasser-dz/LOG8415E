@@ -17,7 +17,7 @@ Ensure that you include the (172.31.16.0/20) subnet in the "Main.py" file on lin
 Benchmark Standalone:
 After setting up the standalone instance, copy the file standalone.sh to the standalone instance using SCP and your access key. Run the script with the following commands:
 To copy: 
--	scp -i "labsuser.pem" /LOG8415-Project/Folder/standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu
+-	scp -i "labsuser.pem" standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu
 # On the standalone instance
 After connecting to the instance, run the script with:
 -	chmod +x standalone.sh
@@ -26,15 +26,15 @@ Finally, find the result in the standaloneResult file.
 Benchmark Cluster:
 After setting up the salves instances, copy the file slave.sh to each slave instance using SCP and your access key. Run the script with the following commands:
 To copy: 
--	scp -i "labsuser.pem" /LOG8415-Project/slave.sh ubuntu@Public_address_ip_of_slave_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/slave.sh ubuntu@Public_address_ip_of_slave_instance:/home/ubuntu
 # On the Slave instance
 After connecting to the instance, run the script with:
 -	chmod +x slave.sh
 -	./slave.sh
 After setting up the master instance, copy the files cluster.sh and master.sh to master instance using SCP and your access key. Run the script with the following commands:
 To copy: 
--	scp -i "labsuser.pem" /LOG8415-Project/master.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
--	scp -i "labsuser.pem" /LOG8415-Project/Folder/cluster.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/master.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/cluster.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu
 # On the Master instance
 After connecting to the instance, run the script with:
 -	chmod +x master.sh
