@@ -14,7 +14,7 @@ Navigate to the directory containing the Python files and run the following comm
 -	python3 Main.py
 
 Ensure that you include the (172.31.16.0/20) subnet in the "Main.py" file on line 9. The script will manage the entire setup process, including security groups and instances.
-Benchmark Standalone:
+# Benchmark Standalone:
 After setting up the standalone instance, copy the file standalone.sh to the standalone instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	scp -i "labsuser.pem" standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu
@@ -23,7 +23,7 @@ After connecting to the instance, run the script with:
 -	chmod +x standalone.sh
 -	./standalone.sh
 Finally, find the result in the standaloneResult file.
-Benchmark Cluster:
+#Benchmark Cluster:
 After setting up the salves instances, copy the file slave.sh to each slave instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	scp -i "labsuser.pem" /LOG8415E/slave.sh ubuntu@Public_address_ip_of_slave_instance:/home/ubuntu
