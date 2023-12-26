@@ -33,7 +33,7 @@ After connecting to the instance, run the script with:
 2-	`./slave.sh`
 After setting up the master instance, copy the files cluster.sh and master.sh to master instance using SCP and your access key. Run the script with the following commands:
 To copy: 
-1 -	`scp -i "labsuser.pem" /LOG8415E/master.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu`
+-	`scp -i "labsuser.pem" /LOG8415E/master.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu`
 2 -	`scp -i "labsuser.pem" /LOG8415E/cluster.sh ubuntu@Public_address_ip_of_master_instance:/home/ubuntu`
 ### On the Master instance
 After connecting to the instance, run the script with:
