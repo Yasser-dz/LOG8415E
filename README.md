@@ -45,9 +45,9 @@ Finally, find the result in the clusterResult file.
  # Proxy:
 After setting up the proxy instance, copy the files proxy_Direct.py ,proxy_Random.py and proxy_customized.py to the proxy instance using SCP and your access key. Run the script with the following commands:
 To copy: 
--	scp -i "labsuser.pem" /LOG8415-Project/Folder/proxy_Direct.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
--	scp -i "labsuser.pem" /LOG8415-Project/Folder/proxy_Random.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
--	scp -i "labsuser.pem" /LOG8415-Project/Folder/proxy_customized.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/proxy_Direct.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/proxy_Random.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
+-	scp -i "labsuser.pem" /LOG8415E/proxy_customized.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu
 # On the Master instance
 1-	CREATE USER 'usrname'@'proxy_public_ip' IDENTIFIED BY 'password';
 2-	GRANT ALL PRIVILEGES ON * . * TO 'usrname'@'proxy_public_ip';
