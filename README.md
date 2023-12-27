@@ -1,27 +1,25 @@
 # Preparation:
-Ensure that you have the following dependencies installed:
-- Python 3
-- boto3
-- paramiko
-
 Make sure to have AWS CLI installed and update your AWS credentials.
-
 Also, take your "labsuser.pem" key and replace the "labsuser.pem" key in the git repo. Do not commit and push the change. We only need your "labsuser.pem" key to SSH into instances and copy files. Ensure that your "labsuser.pem" key has the chmod 400 permissions.
 
  # Set up:
-
 Navigate to the directory containing the Python files and run the following command:
--	`python3 Main.py`
+-	`terraform init`
+-	`terraform plan`
+-	`terraform apply`
 
-Ensure that you include the (172.31.16.0/20) subnet in the "Main.py" file on line 9. The script will manage the entire setup process, including security groups and instances.
 # Benchmark Standalone:
-After setting up the standalone instance, copy the file standalone.sh to the standalone instance using SCP and your access key. Run the script with the following commands:
+After setting up the standalone instance, copy the file `standalone.sh` and `standalone._setup.sh` to the standalone instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	`scp -i "labsuser.pem" standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu`
+-	-	`scp -i "labsuser.pem" standalone_setup.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu`
 ### On the standalone instance
 After connecting to the instance, run the script with:
+-	`chmod +x standalone_setup.sh`
+-	`./standalone_setup.sh`
 -	`chmod +x standalone.sh`
--	`./standalone.sh`
+-	`./standalone.sh`.
+  
 Finally, find the result in the standaloneResult file.
 # Benchmark Cluster:
 
@@ -44,17 +42,29 @@ After connecting to the instance, run the script with:
 -	`./cluster.sh`
 Finally, find the result in the clusterResult file.
  # Proxy:
-After setting up the proxy instance, copy the files proxy_Direct.py ,proxy_Random.py and proxy_customized.py to the proxy instance using SCP and your access key. Run the script with the following commands:
+After setting up the proxy instance, copy the files `proxy.py`and `proxy_setup.sh` y to the proxy instance using SCP and your access key. Run the script with the following commands:
 To copy: 
--	`scp -i "labsuser.pem" /LOG8415E/proxy_Direct.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
--	`scp -i "labsuser.pem" /LOG8415E/proxy_Random.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
--	`scp -i "labsuser.pem" /LOG8415E/proxy_customized.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
+-	`scp -i "labsuser.pem" /LOG8415E/proxy.py ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
+-	`scp -i "labsuser.pem" /LOG8415E/proxy_setup.sh ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
+-		`scp -i "labsuser.pem" /LOG8415E/labsuser.pem ubuntu@Public_address_ip_of_proxy_instance:/home/ubuntu`
+  
 ### On the Master instance
 Run:
+- `mysql -u root -p`
 -	`CREATE USER 'usrname'@'proxy_public_ip' IDENTIFIED BY 'password';`
 -	`GRANT ALL PRIVILEGES ON * . * TO 'usrname'@'proxy_public_ip';`
+-	`FLUSH PRIVILEGES;`
 ### On the Proxy instance
-Then, run the proxy:
--	`python3 proxy_Direct.py "Show tables" `
--	`python3 proxy_Random.py "Show tables"`
--	`python3 proxy_ customized.py "Show tables"`
+Then, run :
+- `chmod +x proxy_setup.sh`
+- `./proxy_setup.sh`
+ # gatekeeper:
+After setting up the gatekeeper instance, copy the files `gatekeeper.py`and `gatekeeper_setup.sh` y to the gatekeeper instance using SCP and your access key. Run the script with the following commands:
+To copy: 
+-	`scp -i "labsuser.pem" /LOG8415E/gatekeeper.py ubuntu@Public_address_ip_of_gatekeeper_instance:/home/ubuntu`
+-	`scp -i "labsuser.pem" /LOG8415E/gatekeeper_setup.sh ubuntu@Public_address_ip_of_gatekeeper_instance:/home/ubuntu`
+### On the gatekeeper instance
+Then, run :
+- `chmod +x gatekeeper_setup.sh`
+- `./gatekeeper_setup.sh`
+ 
