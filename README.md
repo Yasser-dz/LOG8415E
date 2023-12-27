@@ -24,7 +24,7 @@ After connecting to the instance, run the script with:
 -	`./standalone.sh`
 Finally, find the result in the standaloneResult file.
 
-#Benchmark Cluster:
+# Benchmark Cluster:
 After setting up the salves instances, copy the file slave.sh to each slave instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	`scp -i "labsuser.pem" /LOG8415E/slave.sh ubuntu@Public_address_ip_of_slave_instance:/home/ubuntu`
