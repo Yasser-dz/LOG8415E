@@ -23,6 +23,7 @@ After connecting to the instance, run the script with:
 -	`chmod +x standalone.sh`
 -	`./standalone.sh`
 Finally, find the result in the standaloneResult file.
+
 #Benchmark Cluster:
 After setting up the salves instances, copy the file slave.sh to each slave instance using SCP and your access key. Run the script with the following commands:
 To copy: 
