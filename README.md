@@ -1,6 +1,7 @@
 # Preparation:
-Make sure to have AWS CLI installed and update your AWS credentials.
-Also, take your "labsuser.pem" key and replace the "labsuser.pem" key in the git repo. Do not commit and push the change. We only need your "labsuser.pem" key to SSH into instances and copy files. Ensure that your "labsuser.pem" key has the chmod 400 permissions.
+- Make sure to have AWS CLI installed and update your AWS credentials.
+- In the main.tf file, replace the default_subnet_id with the subnet that has ip range of '172.31.16.0/20'
+- Also, take your "labsuser.pem" key and replace the "labsuser.pem" key in the git repo. Do not commit and push the change. We only need your "labsuser.pem" key to SSH into instances and copy files. Ensure that your "labsuser.pem" key has the chmod 400 permissions.
 
  # Set up:
 Navigate to the directory containing all files and run the following command:

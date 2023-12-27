@@ -1,12 +1,32 @@
 #!/bin/bash
 
-# Update package information
-sudo apt update
+# Update the package lists for upgrades and new package installations
+sudo apt-get update
 
-# Install Python 3 and pip
-sudo apt install python3-pip -y
+# Install Python3 and pip3
+sudo apt-get install -y python3 python3-pip
 
-# Install required Python packages
-sudo pip install sshtunnel  # Install sshtunnel for SSH tunneling
-sudo pip install pythonping  # Install pythonping for ICMP ping functionality
-sudo pip install pymysql  # Install pymysql for MySQL database connections
+# Install the Flask framework for Python3
+sudo apt install -y python3-flask
+
+# Install the Python3 virtual environment package
+sudo apt install -y python3.10-venv
+
+# Install the virtualenv package
+pip3 install virtualenv
+
+# Create a virtual environment named 'venv'
+python3 -m venv venv
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Install Flask, requests, pymysql, pythonping, and sshtunnel Python libraries
+sudo pip3 install flask requests pymysql pythonping sshtunnel
+
+
+# Activate the virtual environment
+source venv/bin/activate
+
+# Run the proxy.py script
+sudo python3 proxy.py
