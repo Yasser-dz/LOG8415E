@@ -3,7 +3,7 @@ Make sure to have AWS CLI installed and update your AWS credentials.
 Also, take your "labsuser.pem" key and replace the "labsuser.pem" key in the git repo. Do not commit and push the change. We only need your "labsuser.pem" key to SSH into instances and copy files. Ensure that your "labsuser.pem" key has the chmod 400 permissions.
 
  # Set up:
-Navigate to the directory containing the Python files and run the following command:
+Navigate to the directory containing all files and run the following command:
 -	`terraform init`
 -	`terraform plan`
 -	`terraform apply`
@@ -12,7 +12,7 @@ Navigate to the directory containing the Python files and run the following comm
 After setting up the standalone instance, copy the file `standalone.sh` and `standalone._setup.sh` to the standalone instance using SCP and your access key. Run the script with the following commands:
 To copy: 
 -	`scp -i "labsuser.pem" standalone.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu`
--	-	`scp -i "labsuser.pem" standalone_setup.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu`
+-	`scp -i "labsuser.pem" standalone_setup.sh ubuntu@Public_address_ip_of_standalone_instance:/home/ubuntu`
 ### On the standalone instance
 After connecting to the instance, run the script with:
 -	`chmod +x standalone_setup.sh`
